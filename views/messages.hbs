@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="messages.css">
+  <title>Доска сообщений</title>
+</head>
+
+<body>
+  <section class="screen">
+    <button class="form padding digits"><a href="digits.html">Средние числа</a></button>
+    <div class="string">
+      <p class="author center">АВТОР</p>
+      <p class="message center">СООБЩЕНИЕ</p>
+    </div>
+    <form class="string">
+      <input type="text" placeholder="Автор" class="author form padding">
+      <input type="text" placeholder="Текст сообщения" class="message form padding">
+      <button type="submit" class="form padding">Разместить сообщение</button>
+    </form>
+    {{#if messages}}
+      <div class="message-list">
+        {{#each messages}}
+          <div class="string">
+            <div class="author padding">{{this.author}}</div>
+            <div class="message padding">{{this.text}}</div>
+          </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </section>
+</body>
+
+</html>
